@@ -1,10 +1,6 @@
 <?php
-
-
-
 function countingValleys ($steps, $path){
 
-    $mountainsCount = 0;
     $valleysCount = 0;
     $dCount = 0;
     $uCount = 0;
@@ -29,9 +25,6 @@ function countingValleys ($steps, $path){
             //valley
             if ($startingStep === "D"){
                 $valleysCount += 1;
-            } //mountain
-            elseif ($startingStep === "U"){
-                $mountainsCount += 1;
             }
             $dCount = 0;
             $uCount = 0;
