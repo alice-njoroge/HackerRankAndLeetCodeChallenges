@@ -1,22 +1,32 @@
 <?php
+function repeatedString($s, $n)
+{
+    $strLen = strlen($s);
+    $quotient = (int) ($n / $strLen);
+    $remainder = $n % $strLen;
 
-function repeatedString($s, $n){
-    if (substr_count($s, 'a', 0, strlen($s)) === 0){
-        return 0;
+// count of 'a' in a complete string aka the quotient
+    $count = substr_count($s, 'a');
+    $totalCount = $count * $quotient;
+
+// count of 'a' in the remainder
+    if ($remainder > 0){
+        $totalCount += substr_count($s, 'a',0,$remainder);
     }
-
-    if (strlen($s) === 1){
-        return $n;
-    }
-
-   do{
-       $s .= $s;
-   } while(strlen($s) <= $n);
-
-    return substr_count($s, 'a', 0, $n);
-
+    return $totalCount;
 }
+
 var_dump(repeatedString('kmretasscityylpdhuwjirnqimlkcgxubxmsxpypgzxtenweirknjtasxtvxemtwxuarabssvqdnktqadhyktagjxoanknhgilnm', 736778906400));
+
+
+
+
+
+
+
+
+
+
 
 
 
