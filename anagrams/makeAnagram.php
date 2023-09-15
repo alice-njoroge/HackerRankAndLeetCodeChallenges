@@ -21,7 +21,7 @@ function makeAnagram($a, $b)
             $count += $value;
         }
     }
-//sum of all b values that are not in a 
+//sum of all b values that are not in a
     foreach ($bFrequency as $value) {
         $count += $value;
     }

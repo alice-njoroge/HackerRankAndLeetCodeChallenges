@@ -1,40 +1,37 @@
 <?php
-function countingValleys ($steps, $path){
 
-    $valleysCount = 0;
-    $dCount = 0;
-    $uCount = 0;
-
+function countingValleys($steps, $path){
     $steps = str_split($path);
     $startingStep = $steps[0];
 
-//count the steps made
+    $dCount = 0;
+    $uCount = 0;
+    $valleys = 0;
+
     foreach ($steps as $step){
-        //reset the starting character after getting back to sea level
-        if ($dCount === 0 and $uCount === 0){
+        //reset the starting step if the hiker is back at sea level
+        if ($uCount === 0 &&  $dCount === 0){
             $startingStep = $step;
         }
 
+        //count the steps made
         if ($step === "D"){
-            $dCount += 1;
-        }else if ($step === "U"){
-            $uCount += 1;
+            $dCount ++;
+        } else if ($step === "U"){
+            $uCount ++;
         }
-        // determine the number of valleys and mountains hiked
+
+        //determine if the hiker is back to sea level
         if ($dCount === $uCount){
-            //valley
             if ($startingStep === "D"){
-                $valleysCount += 1;
+                $valleys ++;
             }
             $dCount = 0;
             $uCount = 0;
         }
     }
 
- return $valleysCount;
+    return $valleys;
 }
 
 var_dump(countingValleys(8, "UDDDUDUU"));
-
-
-
