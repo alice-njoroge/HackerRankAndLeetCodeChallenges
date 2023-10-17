@@ -18,7 +18,6 @@ abstract class AchievementType
     public function icon(): string
     {
         return strtolower(str_replace(' ', '-',$this->name())).'.png';
-
     }
 
     // method that is declared without an implementation (without braces, and followed by a semicolon)
