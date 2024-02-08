@@ -1,0 +1,1 @@
+given "JavaScript is awesome" return "awesome is JavaScript"
