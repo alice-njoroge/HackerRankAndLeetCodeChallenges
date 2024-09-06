@@ -17,9 +17,7 @@ function rgb(r, g, b){
         else if (val === 14) return 'E';
         else if (val === 15) return 'F';
         else return val;
-
     }
-
     return hex(r)+hex(g)+hex(b);
 }
 console.log(rgb(255,300, 10));
